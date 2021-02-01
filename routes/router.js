@@ -4,6 +4,9 @@ const controller = require('../controllers/map.controller')
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  res.send({msg: "ok"})
+})
 router.get('/maps', controller.getMap)
 router.post('/maps', controller.postMap)
 
