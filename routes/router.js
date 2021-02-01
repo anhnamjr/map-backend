@@ -1,17 +1,9 @@
 const express = require('express');
-const db = require("../db")
 
 const controller = require('../controllers/map.controller')
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  try {
-    const { rows } = await db.query(`Select * from "Maps"`)
-  } catch (err) {
-    console.log(err)
-  }
-})
 router.get('/maps', controller.getMap)
 router.post('/maps', controller.postMap)
 
